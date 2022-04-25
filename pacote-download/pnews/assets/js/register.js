@@ -42,7 +42,7 @@ $('#btnResgistro').on('click', function () {
         resInputError("cpf", "");
         return false;
         
-    } else if (cpf .length <= 13) {
+    } else if (cpf.length <= 13) {
         resInputError("cpf", "qtdLength");
         return false;
 

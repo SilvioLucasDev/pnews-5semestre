@@ -1,5 +1,9 @@
 <?php
 
+    // ARRUMAR FORMULÁRIO DE CADASTRO, COLOCAR SELECT EM ALGUNS CAMPOS, CONSULTA POR CPF.
+    // MAPA ESTÁ FUNCIONANDO?
+    // FORMATAR INPUTS, ADDSLASHS... 
+
     //CRUD
     class UsuarioModel {
 
@@ -14,34 +18,16 @@
         // ---------------- Validar Login ----------------
         public function validarLogin() {
 
-            //HASH FICA MUANDO DE VALOR E NÃO BATE COM O DO BANCO DE DADOS
-            // $teste2 = "Luc@s001";
-            // echo $teste = password_hash($teste2,PASSWORD_DEFAULT);
-
-            // exit;
-
-            $query = "SELECT id, nome, email, senha FROM usuarios WHERE email = :email AND senha = :senha";
+            $query = "SELECT id, nome, email, senha FROM usuarios WHERE email = :email";
             $stmt = $this->conexao->prepare($query); 
             $stmt->bindValue(':email', $this->usuario->__get('email'));
-            $stmt->bindValue(':senha', password_hash($this->usuario->__get('senha'),PASSWORD_DEFAULT));
             $stmt->execute();
             $result = $stmt->fetch(PDO::FETCH_ASSOC);
-            $count=  $stmt->rowCount();
 
-            // echo "<pre>";
-            // print_r($result);
-            // echo "<pre>";
-
-            // echo $count;
-            // exit;
-
-            if($count == 1 ) {
-                if(password_verify($this->usuario->__get("senha"), $result["senha"])){
-                    $_SESSION['autenticado'] = "SIM";
-                    $_SESSION['id'] = $result['id'];
-                    return true;
-                }
-                
+            if(password_verify($this->usuario->__get("senha"), $result["senha"])){
+                $_SESSION['autenticado'] = "SIM";
+                $_SESSION['id'] = $result['id'];
+                return true;
             } else {
                 $_SESSION["retorno"] =  "erro";
                 $_SESSION["msg"] = "*E-mail e/ou senha inválido(s)"; 
