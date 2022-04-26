@@ -2,6 +2,7 @@
     
     // Classe de conexão com o bando de dados
     class Conexao{
+        private $host = 'localhost:3307';
         private $dbname = 'pnews';
         private $user = 'root';
         private $pass = '';
