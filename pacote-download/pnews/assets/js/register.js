@@ -22,7 +22,7 @@ $('#btnResgistro').on('click', function () {
         if (tipo === "") {
             $("#"+id).after("<p class='erroInput'>Este campo é obrigatório!</p>");
 
-        } else if (tipo === "qtdLengtha"){
+        } else if (tipo === "qtdLength"){
             $("#"+id).after("<p class='erroInput'>Quantidade de caracteres inválida!</p>");
 
         }   else if (tipo === "emailError"){
@@ -64,14 +64,12 @@ $('#btnResgistro').on('click', function () {
 
     } else if (email == "" || email != "") {
         if(email == "") {
-            alert(1);
             resInputError("email", "");
             return false;
         }
         
         var regex = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i;
         if (!regex.test(email)) {
-            alert(3);
             resInputError("email", "emailError");
             return false;
         } 
