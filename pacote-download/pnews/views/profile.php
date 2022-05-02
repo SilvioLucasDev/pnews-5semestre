@@ -1,5 +1,5 @@
 <?php
-require_once 'includes/header.php ';
+require_once 'includes/header.php';
 ?>
 
 <link rel="stylesheet" type="text/css" href="../assets/css/modal.css">
@@ -96,7 +96,7 @@ require_once 'includes/header.php ';
 </div>
 
 <?php
-include_once 'includes/footer.php ';
+include_once 'includes/footer.php';
 ?>
 
 <script src="../assets/js/profile.js"></script>

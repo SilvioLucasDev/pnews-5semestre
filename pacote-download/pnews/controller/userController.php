@@ -1,10 +1,9 @@
 <?php
-
+    session_start();
+    
     require_once "../core/conn.php";
     require_once "../model/classUser.php";
     require_once "../model/userModel.php";
-
-    session_start();
 
     // ---------------- Validar Login ----------------
     if(isset($_POST['login'])) {

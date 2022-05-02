@@ -14,8 +14,16 @@
 }
 
 .t-modal .modal-dialog {
-    width: 500px;
+    /* width: 500px; */
 }
+
+/* Small Screen Phones */
+@media (min-width: 320px) and (max-width: 479px) {
+    .modal-content {
+        width: 100%
+    }
+}
+
 
 /* --------------- ALTERAÇÕES HEADER/ TITLE ------------------------------ */
 .t-modal .modal-content .modal-header {
@@ -47,4 +55,4 @@
 
 .t-modal .modal-content .modal-footer .btn {
     margin: auto;
-} */
+}

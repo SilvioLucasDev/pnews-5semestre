@@ -4,6 +4,10 @@
     // MAPA ESTÁ FUNCIONANDO?
     // FORMATAR INPUTS, ADDSLASHS... 
 
+    // ini_set('display_errors', 1);
+    // ini_set('display_startup_errors', 1);
+    // error_reporting(E_ALL);
+
     //CRUD
     class UsuarioModel {
 
@@ -11,13 +15,13 @@
         private $usuario;
 
         public function __construct(Conexao $conexao, Usuario $usuario) {
+
             $this->conexao = $conexao->conectar();
             $this->usuario = $usuario;
         }
 
         // ---------------- Validar Login ----------------
         public function validarLogin() {
-
             $query = "SELECT id, nome, email, senha FROM usuarios WHERE email = :email";
             $stmt = $this->conexao->prepare($query); 
             $stmt->bindValue(':email', $this->usuario->__get('email'));

@@ -106,8 +106,26 @@
                                         <input class="form-control my-2 borda" type="text" id="pneu_utilizado" name="pneu_utilizado" placeholder="Marca de pneu utilizado" >
 
                                         <input class="form-control my-2 borda" type="text" id="modelo_pneu" name="modelo_pneu" placeholder="Modelo do pneu" >
+ 
+                                        <select class="form-control my-2 borda colorInputForm" id="tp_medio_troca" name="tp_medio_troca" >
+                                                <option selected value="">Tempo médio de troca</option>
+                                                <option value="1 Mês">1  Mês</option>
+                                                <option value="2 Meses">2  Meses</option>
+                                                <option value="3 Meses">3  Meses</option>
+                                                <option value="4 Meses">4  Meses</option>
+                                                <option value="5 Meses">5  Meses</option>
+                                                <option value="6 Meses">6  Meses</option>
+                                                <option value="7 Meses">7  Meses</option>
+                                                <option value="8 Meses">8  Meses</option>
+                                                <option value="9 Meses">9  Meses</option>
+                                                <option value="10 Meses">10  Meses</option>
+                                                <option value="11 Meses">11 Meses</option>
+                                                <option value="12 Meses">12  Meses</option>
+                                                <option value="2 Anos">2  Anos</option>
+                                                <option value="3 Anos ou mais">3  Anos ou mais</option>
+                                            </select>
 
-                                        <input class="form-control my-2 borda" type="text" id="tp_medio_troca" name="tp_medio_troca" placeholder="Tempo médio de troca" >
+                                        <!-- <input class="form-control my-2 borda" type="text" id="tp_medio_troca" name="tp_medio_troca" placeholder="Tempo médio de troca" > -->
 
                                         <button id="btnResgistro" class="btn btn-outline-danger btn-lg mt-4 borda" type="submit" name="cadastro">Continuar</button>
                                     </form>
@@ -120,12 +138,19 @@
             </div>
         </main>
 
-<?php 
-	include_once 'includes/footer.php ';
-?>
+    </footer>
+        <p class="bg-black bg-opacity-50 text-black text-center mb-0 fixed-bottom">2021 © Copyright GRUPO 9 SI technologies.</p>
+    <footer>
 
-    <script src="../assets/js/mask.js"></script>
-    <script src="../assets/js/jquery.mask.js"></script>
-    <script src="../assets/js/register.js"></script>
-    <!-- Font Awesome -->
-    <script src="https://kit.fontawesome.com/54ed41f2b2.js" crossorigin="anonymous"></script>
+
+        <!-- jQuery -->
+        <script src="https://code.jquery.com/jquery-3.6.0.slim.js" integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
+       
+        <script src="../assets/js/mask.js"></script>
+        <script src="../assets/js/jquery.mask.js"></script>
+        <script src="../assets/js/register.js"></script>
+        <!-- Font Awesome -->
+        <script src="https://kit.fontawesome.com/54ed41f2b2.js" crossorigin="anonymous"></script>
+
+    </body>
+</html>

@@ -1,5 +1,5 @@
 <?php
-	 require_once 'includes/header.php ';
+	 require_once 'includes/header.php';
 ?>
 
 <main class="full-height">
@@ -27,5 +27,5 @@
 </main>
 
 <?php 
-	include_once 'includes/footer.php ';
+	include_once 'includes/footer.php';
 ?>

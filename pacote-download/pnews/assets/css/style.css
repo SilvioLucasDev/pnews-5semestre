@@ -66,6 +66,11 @@ body {
 	margin: 0.5rem;
 }
 
+/*Customização da cor do texto dos inputs dos formulários*/
+.colorInputForm{
+	color: #00000099;
+}
+
 
 
 /*****************************************************************************************************
@@ -95,4 +100,7 @@ body {
 .botao {
 	padding-bottom: 400px;
 }
+
+
+
 
