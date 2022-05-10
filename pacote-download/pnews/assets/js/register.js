@@ -79,8 +79,8 @@ $('#btnResgistro').on('click', function () {
         resInputError("senha", "");
         return false;
 
-    } else if (senha.length <= 6) {
-        resInputError("telefone", "qtdLengtha");
+    } else if (senha.length <= 5) {
+        resInputError("senha", "qtdLength");
         return false;
         
     } else if (rua == "") {
