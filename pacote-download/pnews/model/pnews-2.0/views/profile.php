@@ -4,7 +4,7 @@ require_once 'includes/header.php';
 
 <link rel="stylesheet" type="text/css" href="../assets/css/modal.css">
 
-<main id="main-perfil">
+<main id="main-perfil" class="full-height">
       <div class="container h-100 px-0">
             
             <?php 

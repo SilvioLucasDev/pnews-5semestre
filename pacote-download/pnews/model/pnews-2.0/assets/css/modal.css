@@ -1,0 +1,58 @@
+/* CUSTOMIZAÇÃO DE MODAIS
+
+/* --------------- ALTERAÇÕES GERAIS ------------------------------ */
+
+/* BORDA */
+.borda-form { 
+    border-top: 1px solid #d7d7d7;
+}
+
+
+/* --------------- ALTERAÇÕES MODAL ------------------------------ */
+.t-modal .modal-content {
+    border-radius: 0.3rem;
+}
+
+.t-modal .modal-dialog {
+    /* width: 500px; */
+}
+
+/* Small Screen Phones */
+@media (min-width: 320px) and (max-width: 479px) {
+    .modal-content {
+        width: 100%
+    }
+}
+
+
+/* --------------- ALTERAÇÕES HEADER/ TITLE ------------------------------ */
+.t-modal .modal-content .modal-header {
+    padding: 0px;
+}
+
+.t-modal .modal-content .modal-header .modal-title {
+    font-weight: bold;
+    margin: auto;
+}
+
+.t-modal .modal-content .modal-header  .close {
+    margin: 0px;
+    padding: 10px;
+}
+
+
+
+/* --------------- ALTERAÇÕES BODY ------------------------------ */
+.t-modal .modal-content .modal-body {
+    padding:0px;
+}
+
+
+/* --------------- ALTERAÇÕES FOOTER ------------------------------ */
+.t-modal .modal-content .modal-footer {
+    padding: 5px;
+}
+
+.t-modal .modal-content .modal-footer .btn {
+    margin: auto;
+}

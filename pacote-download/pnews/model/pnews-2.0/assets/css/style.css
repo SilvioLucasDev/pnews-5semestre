@@ -98,22 +98,9 @@ body {
 
 
 .botao {
-	margin-top: 15%;
+	padding-bottom: 400px;
 }
 
 
-/*****************************************************************************************************
-		Customizações Rodapé
-*****************************************************************************************************/
 
-.footer {
-	background-color: #00000080;
-	width: 100%;
-	text-align: center;
-	position: fixed;
-	bottom: 0;
-}
 
-.footer p {
-	margin: 0px;
-}

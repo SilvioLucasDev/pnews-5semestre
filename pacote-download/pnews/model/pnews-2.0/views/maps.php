@@ -2,7 +2,7 @@
 	 require_once 'includes/header.php';
 ?>
 
-<main>
+<main class="full-height">
 	<div class="container h-100 pt-md-3 pb-5">
 		<div class="row justify-content-center h-100">
 			<div class="col">

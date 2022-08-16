@@ -1,7 +1,5 @@
         </footer>
-        <div class="footer">
-            <p>2021 © Copyright GRUPO 9 SI technologies.</p>
-        </div>
+            <p class="bg-black bg-opacity-50 text-black text-center mb-0 fixed-bottom">2021 © Copyright GRUPO 9 SI technologies.</p>
         <footer>
 
         <!-- JavaScript utilizado para fazer o menu hamburguer -->
