@@ -1,6 +1,8 @@
 <?php
+    ob_start();
     session_start();
     
+    require_once '../core/config.php';
     require_once "../core/conn.php";
     require_once "../model/classUser.php";
     require_once "../model/userModel.php";

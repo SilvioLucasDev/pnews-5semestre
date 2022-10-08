@@ -1,0 +1,29 @@
+[22-Sep-2022 22:38:04 America/Fortaleza] PHP Fatal error:  Uncaught Error: Undefined constant "URL" in /home2/pnewss45/public_html/views/maps.php:5
+Stack trace:
+#0 {main}
+  thrown in /home2/pnewss45/public_html/views/maps.php on line 5
+[22-Sep-2022 22:38:38 America/Fortaleza] PHP Fatal error:  Uncaught Error: Undefined constant "URL" in /home2/pnewss45/public_html/views/maps.php:5
+Stack trace:
+#0 {main}
+  thrown in /home2/pnewss45/public_html/views/maps.php on line 5
+[24-Sep-2022 03:15:51 America/Fortaleza] PHP Warning:  Undefined array key "borracharias" in /home2/pnewss45/public_html/views/maps.php on line 4
+[24-Sep-2022 03:15:51 America/Fortaleza] PHP Warning:  foreach() argument must be of type array|object, null given in /home2/pnewss45/public_html/views/maps.php on line 156
+[24-Sep-2022 03:22:36 America/Fortaleza] PHP Warning:  Undefined array key "borracharias" in /home2/pnewss45/public_html/views/maps.php on line 4
+[24-Sep-2022 03:22:36 America/Fortaleza] PHP Warning:  foreach() argument must be of type array|object, null given in /home2/pnewss45/public_html/views/maps.php on line 155
+[24-Sep-2022 09:13:44 America/Fortaleza] PHP Warning:  Undefined array key "borracharias" in /home2/pnewss45/public_html/views/maps.php on line 4
+[24-Sep-2022 09:13:44 America/Fortaleza] PHP Warning:  foreach() argument must be of type array|object, null given in /home2/pnewss45/public_html/views/maps.php on line 155
+[25-Sep-2022 21:30:48 America/Fortaleza] PHP Fatal error:  Uncaught TypeError: extract(): Argument #1 ($array) must be of type array, bool given in /home2/pnewss45/public_html/views/profile.php:11
+Stack trace:
+#0 /home2/pnewss45/public_html/views/profile.php(11): extract(false)
+#1 {main}
+  thrown in /home2/pnewss45/public_html/views/profile.php on line 11
+[28-Sep-2022 00:57:12 America/Fortaleza] PHP Warning:  Undefined array key "borracharias" in /home2/pnewss45/public_html/views/maps.php on line 4
+[28-Sep-2022 00:57:12 America/Fortaleza] PHP Warning:  foreach() argument must be of type array|object, null given in /home2/pnewss45/public_html/views/maps.php on line 155
+[03-Oct-2022 22:00:00 America/Fortaleza] PHP Warning:  Undefined array key "borracharias" in /home2/pnewss45/public_html/views/maps.php on line 4
+[03-Oct-2022 22:00:00 America/Fortaleza] PHP Warning:  foreach() argument must be of type array|object, null given in /home2/pnewss45/public_html/views/maps.php on line 159
+[04-Oct-2022 12:43:09 America/Fortaleza] PHP Warning:  Undefined array key "borracharias" in /home2/pnewss45/public_html/views/maps.php on line 4
+[04-Oct-2022 12:43:09 America/Fortaleza] PHP Warning:  foreach() argument must be of type array|object, null given in /home2/pnewss45/public_html/views/maps.php on line 165
+[04-Oct-2022 18:56:46 America/Fortaleza] PHP Warning:  Undefined array key "borracharias" in /home2/pnewss45/public_html/views/maps.php on line 4
+[04-Oct-2022 18:56:46 America/Fortaleza] PHP Warning:  foreach() argument must be of type array|object, null given in /home2/pnewss45/public_html/views/maps.php on line 165
+[04-Oct-2022 19:27:20 America/Fortaleza] PHP Warning:  Undefined array key "borracharias" in /home2/pnewss45/public_html/views/maps.php on line 4
+[04-Oct-2022 19:27:20 America/Fortaleza] PHP Warning:  foreach() argument must be of type array|object, null given in /home2/pnewss45/public_html/views/maps.php on line 165

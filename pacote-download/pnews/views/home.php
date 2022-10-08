@@ -8,6 +8,8 @@
 			<div class="col col-lg-9 col-xl-7 align-self-center">
 				<div class="botao" style>
 					<a href="maps.php"> 
+
+					<a href="../controller/borrachariaController.php?getBorracharias=1">
 						<img src="../assets/img/botao-procure-borracharias.svg" class="img-fluid" alt="Procurar Borracharias">
 					</a>
 				</div>

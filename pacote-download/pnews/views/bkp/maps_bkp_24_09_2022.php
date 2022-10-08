@@ -1,7 +1,5 @@
 <?php
 require_once 'includes/header.php';
-
-$borracharias = $_SESSION['borracharias'];
 ?>
 
 <link rel="stylesheet" type="text/css" href="../assets/css/modal.css">
@@ -83,140 +81,144 @@ $borracharias = $_SESSION['borracharias'];
 <!-- FIM MODAL -->
 
 <script>
-	var URL = "<?php echo URL ?>";
+    var URL = "<?php echo URL ?>";
 
-	// LOCALIZAÇÃO PADRÃO SE CASO O USUÁRIO N PERMITIR USAR SUAS COORDENADAS
 	var lat = -23.551260514373695
 	var lng = -46.63441780394384
 
-	function initMap(position = null) {
+	//PEGA AS COORDENADAS DO USUÁRIO
+	navigator.geolocation.watchPosition(initMap, error)
 
-		// DEFINE CUSTOMIZAÇÕES INICIAIS E INSTÃNCIA O MAPA
+	//EXIBE OS ERROS SE CASO A API NÃO CONSEGUIR PEGAR AS COORDENAS DO USUÁRIO
+	function error(error) {
+		switch (error.code) {
+			case error.PERMISSION_DENIED:
+				console.log("Usuário rejeitou a solicitação de Geolocalização.")
+				break;
+
+			case error.POSITION_UNAVAILABLE:
+				console.log("Localização indisponível.")
+				break;
+				
+			case error.TIMEOUT:
+				console.log("O tempo da requisição expirou.")
+				break;
+
+			case error.UNKNOWN_ERROR:
+				console.log("Algum erro desconhecido aconteceu.")
+				break;
+		}
+
+		initMap()
+	}
+
+
+	function initMap(position = null) {
+		if(position) {
+			lat = position.coords.latitude,
+			lng = position.coords.longitude
+		}
+	
+		//DEFINE CUSTOMIZAÇÕES INICIAIS E INSTÃNCIA O MAPA
 		const map = new google.maps.Map(document.getElementById("map"), {
 			zoom: 13,
-			center: {
-				lat: lat,
-				lng: lng
-			},
-			styles: [{
-				"featureType": "poi",
-				"stylers": [{
-					"visibility": "off"
-				}]
-			}]
+			center: {lat: lat,lng: lng},
+			styles: [
+				{
+					"featureType": "poi",
+					"stylers": [{
+						"visibility": "off"
+					}]
+				}
+			]
 		});
 
-		// MARCADOR DA LOCALIZÃO ATUAL DO USUÁRIO
+		//MARCADOR DA LOCALIZÃO ATUAL DO USUÁRIO
 		const marker = new google.maps.Marker({
-			position: {
-				lat: lat,
-				lng: lng
-			},
-			map: map,
+		position: {lat: lat,lng: lng},
+		map: map,
 		});
 
-		// PEGA AS COORDENADAS DO USUÁRIO
-		navigator.geolocation.watchPosition(success, error)
 
-		// EXIBE OS ERROS SE CASO A API NÃO CONSEGUIR PEGAR AS COORDENADAS DO USUÁRIO
-		function error(error) {
-
-			switch (error.code) {
-				case error.PERMISSION_DENIED:
-					console.log("Usuário rejeitou a solicitação de Geolocalização.")
-					break;
-
-				case error.POSITION_UNAVAILABLE:
-					console.log("Localização indisponível.")
-					break;
-
-				case error.TIMEOUT:
-					console.log("O tempo da requisição expirou.")
-					break;
-
-				case error.UNKNOWN_ERROR:
-					console.log("Algum erro desconhecido aconteceu.")
-					break;
-			}
-		}
-
-		// SETA AS COORDENADAS DO USUÁRIO
-		function success(position) {
-			marker.setPosition({
-				lat: position.coords.latitude,
-				lng: position.coords.longitude
-			})
-
-			map.setCenter({
-				lat: position.coords.latitude,
-				lng: position.coords.longitude
-			})
-		}
-
-		// ABRE MODAL PARA ADICIONAR NOVA BORRACHARIA
+		//ABRE MODAL PARA ADICIONAR NOVA BORRACHARIA
 		google.maps.event.addListener(map, 'click',
 			function(event) {
+				addMarker({ //REMOVER ESSE TRECHO DPS, RESPONSAVEL POR COLOCAR ICON NO MAPA AO CLICKAR.
+					coords: event.latLng
+				});
+
 				const inputCoords = document.getElementById("inputCoords");
 				inputCoords.value = event.latLng;
 				document.getElementById("showModal").click();
 			})
 
-		// CRIA MARCADORES ALEATÓRIOS DE FORMA DINÂMICA (REMOVER ESSE LOOP PHP E FAZER EM JS)
-		<?php foreach ($borracharias as $index) {
-			extract($index);
-		?>
-			var markers = [{
-				coords: <?php echo $coordenadas ?>,
-				content: '<div dir="ltr" style="" jstcache="0">' +
-							'<div jstcache="34" class="poi-info-window gm-style">' +
-
-								'<div jstcache="2">' +
-									'<div jstcache="3" class="title full-width" jsan="7.title,7.full-width">' + '<?php echo $nome ?>' + '</div>' +
+		//CRIA MARCADORES ALEATÓRIOS DE FORMA "DINÂMICA" // VAI RECEBER ESSES DADOS DIRETO DO BANCO
+		const markers = [
+			{
+				coords: {lat: -23.547141962399672,lng: -46.30199768678884},
+				content: '<div dir="ltr" style="" jstcache="0">'
+							+'<div jstcache="34" class="poi-info-window gm-style">'
+								+'<div jstcache="2">'
+									+'<div jstcache="3" class="title full-width" jsan="7.title,7.full-width"> Borracharia do Alemão </div>' 
 									
-									'<div class="address">' +
-										'<div jstcache="4" jsinstance="0" class="address-line full-width" jsan="7.address-line,7.full-width">' + '<?php echo 'R: ' . $rua . ', ' . $numero . ' - ' . $complemento . ' ' . $bairro ?>' + '</div>' +
-										'<div jstcache="4" jsinstance="1" class="address-line full-width" jsan="7.address-line,7.full-width">' + '<?php echo $cidade . ' - ' . $estado ?>' + '</div>' +
-										'<div jstcache="4" jsinstance="2" class="address-line full-width" jsan="7.address-line,7.full-width">' + '<?php echo $cep ?>' + '</div>' +
-									'</div>' +
-								'</div>' +
+									+'<div class="address">'
+										+'<div jstcache="4" jsinstance="0" class="address-line full-width" jsan="7.address-line,7.full-width"> R: Barão de Mauá, 1900 - Jardim Itapeva </div>'
 
-								'<div jstcache="5" style="display:none"></div>' +
+										+'<div jstcache="4" jsinstance="1" class="address-line full-width" jsan="7.address-line,7.full-width"> Mauá - SP </div>'
 
-								'<div>' +
-									'<a jstcache="6" href="tel:+55' + '<?php echo $telefone ?>' + '" tabindex="0"><span>Ligar para: +55' + '<?php echo $telefone ?>' + '</span></a>' +
-								'</div>' +
-							'</div>' +
-						 '</div>'
-			}, ];
+										+'<div jstcache="4" jsinstance="2" class="address-line full-width" jsan="7.address-line,7.full-width"> 09350-000 </div>'
+									+'</div>' 
 
-			addMarker(markers[0]);
-		<?php } ?>
+								+'</div>'
+
+								+'<div jstcache="5" style="display:none"></div>'
+
+								+'<div>'
+									+'<a jstcache="6" href="tel:+5511959861303" tabindex="0"><span>Ligar para: +55 11 95986-1303</span></a>'
+								+'</div>'
+		
+							+'</div>'
+						+'</div>'
+			},
+			{
+				coords: {lat: -23.647141962399672,lng: -46.40199768678884},
+			}
+		];
+
+		//VAI LER E EXTRAIR OS DADOS DO JSON RECEBIDO DO BANCO
+		for (var i = 0; i < markers.length; i++) {
+			addMarker(markers[i]);
+		}
 
 		function addMarker(data) {
-			var markerBd = new google.maps.Marker({
+			var marker = new google.maps.Marker({
 				position: data.coords,
 				map: map,
 				icon: URL + 'assets/img/maps/icon_maps.png'
 			})
+
 
 			if (data.content) {
 				var infoWindow = new google.maps.InfoWindow({
 					content: data.content
 				});
 
-				markerBd.addListener('click', function() {
-					infoWindow.open(map, markerBd);
+				marker.addListener('click', function(){
+					infoWindow.open(map, marker);
 				});
 			}
+
 		}
 	}
 </script>
 
-<script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB9IWlEU_CZQqtyGqSr-lvN25n43fW6f2g&callback=initMap"></script>
+<script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB9IWlEU_CZQqtyGqSr-lvN25n43fW6f2g"></script>
 
 <?php
 include_once 'includes/footer.php';
 ?>
+
+
 
 <!-- Referência dos ícones do maps -->
 <!-- <div> Icons made by 
