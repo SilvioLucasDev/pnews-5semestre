@@ -1,5 +1,5 @@
 <h1 align="center">
- 👨‍🔧 Pnews - PROJETO EM CONSTRUÇÃO
+ 👨‍🔧 Pnews v1
 </h1>
 
 # 📌 O que é? 
