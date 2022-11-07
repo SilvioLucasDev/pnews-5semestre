@@ -1,5 +1,5 @@
 <h1 align="center">
- 👨‍🔧 Pnews v1
+ 👨‍🔧 Pnews 5° Semestre
 </h1>
 
 # 📌 O que é? 
